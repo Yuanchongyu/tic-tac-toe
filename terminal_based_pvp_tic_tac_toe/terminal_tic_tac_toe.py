@@ -2,15 +2,17 @@ def print_board(board):
     """
     打印棋盘。
     board 是一个长度为9的列表，每3个元素表示一行。
+    不使用 join，让代码更容易理解。
     """
-    print("\n")
+    print()
     for i in range(3):
-        row = " | ".join(board[i*3:(i+1)*3])
-        print(f" {row} ")
+        # 打印一行中的三个格子
+        print("", board[i*3], "|", board[i*3 + 1], "|", board[i*3 + 2])
+        
+        # 打印分隔线（除了最后一行）
         if i < 2:
             print("---+---+---")
-    print("\n")
-
+    print()
 
 def check_winner(board):
     """
@@ -92,3 +94,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# [" ", "X", " ", " ", "O", " ", " ", " ", " ", " "]
